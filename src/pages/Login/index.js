@@ -31,7 +31,7 @@ export default function Login() {
 
 
         <GoogleLogin
-        clientId="AIzaSyC9PYObCBnz3wImFyrb6N1lF2MJdBnUlcI" 
+        clientId="40775526312-dmc1moom94vrsgm0pp57uogo5k0v54hq.apps.googleusercontent.com" 
         buttonText="LOGIN WITH GOOGLE"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
