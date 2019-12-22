@@ -1,0 +1,11 @@
+.Login{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Login h1{
+    text-align: center;
+
+}
