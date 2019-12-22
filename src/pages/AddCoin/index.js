@@ -30,7 +30,7 @@ export default function AddCoin({history}) {
     }
 
    function nav() {
-      history.push('/');
+      history.push('/Conversor');
     }
     
  

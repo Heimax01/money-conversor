@@ -17,7 +17,7 @@ export default function Relatorio({history}) {
       const [coins, setCoins] = useState([]);
 
       function nav() {
-          history.push('/');
+          history.push('/Conversor');
       }
 
   return (
