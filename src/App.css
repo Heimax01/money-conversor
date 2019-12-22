@@ -108,6 +108,10 @@ body, input, button {
   
 }
 
+.btns{
+  flex-direction: row;
+}
+
 #cad{
   width: 60%;
   height: 30px;

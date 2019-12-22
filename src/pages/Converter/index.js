@@ -95,9 +95,10 @@ export default function Converter({history}) {
     
 
     <br/><br/>
+    <div className="btns">
     <button className="btn2" id="cad" onClick={nav}>Cadastrar uma moeda</button>
     <button className="btn2" id="rel" onClick={nav2}>Relatório</button>
-
+    </div>  
   
       </>
   );
