@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Login from './pages/Login';
 import AddCoin from './pages/AddCoin';
 import Converter from './pages/Converter';
 import Relatorio from './pages/Relatorio';

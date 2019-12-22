@@ -1,9 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import FacebookLogin from 'react-facebook-login';
 
+import GoogleLogin from 'react-google-login';
 
 // import { Container } from './styles';
 
-export default function Relatorio() {
+export default function Login() {
+
+    const responseFacebook = (response) => {
+        console.log(response);
+      }
+  
+      const responseGoogle = (response) => {
+        console.log(response);
+      }
 
 
   return (
