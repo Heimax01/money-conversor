@@ -18,18 +18,17 @@ function App() {
 
 
   return (
-    <div className="container">
-     
-      <Provider store={store}>
-        <Perfil />
-        
+    <Provider store={store}>
       
+    <div className="container">
 
       <div className="content">
+        <Perfil />
         <Routes />
       </div>
-      </Provider>
+      
     </div>
+    </Provider>
 
   );
 }

@@ -40,6 +40,15 @@ body, input, button {
   padding: 30px;
 }
 
+.content img {
+  margin-top: -20px;
+  margin-right: -25px;
+  float: right;
+  border-radius: 50%;
+  border: 2px solid #1d8808;
+  
+}
+
 .content > p {
   font-size: 22px;
   line-height: 30px;

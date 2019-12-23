@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 
 
 
-function  Login  ({history})  {
+function  Login  ({history,dispatch})  {
 
     const setImageName = (foto,nome) => {
         return {
@@ -25,13 +25,14 @@ function  Login  ({history})  {
       }
     
     
-    const responseFacebook = ({dispatch},response) => {
-        history.push('/Conversor');
+    const responseFacebook = (response) => {
         console.log(response);
-        const foto = response.data.picture.url;
-        const nome = response.name;
+        history.push('/Conversor');
         
-        dispatch(setImageName(foto,nome));
+         const foto = response.picture.data.url;
+         const nome = response.name;
+        
+         dispatch(setImageName(foto,nome));
       }
     
       const responseGoogle = ({history},response) => {

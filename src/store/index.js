@@ -16,8 +16,8 @@ function reducer(state = INITIAL_STATE, action) {
     if (action.type === "SET_IMAGENAME") {
         return {
             ...state,
-            picture: action.picture,
-            name: action.name
+            picture: action.foto,
+            name: action.nome
         };
     }
 
