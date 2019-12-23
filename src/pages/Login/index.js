@@ -5,35 +5,56 @@ import GoogleLogin from 'react-google-login';
 
 import './style.css';
 
+import { connect } from 'react-redux';
 // import { Container } from './styles';
 
-export default function Login({history}) {
 
-    const responseFacebook = (response) => {
-        history.push('/Conversor');
-      }
-  
-      const responseGoogle = (response) => {
-        history.push('/Conversor');
-      }
 
-      const responseGoogleError = (response) => {
-        console.log(response);
-      }
+const setImageName = (foto,nome,response) => {
+    return {
+        type: 'SET_IMAGENAME',
+        foto,
+        nome,
+    };
+    
+  }
 
-  return (
+
+const responseFacebook = ({history,dispatch},response) => {
+    console.log(response);
+    const foto = response.data.picture.url;
+    const nome = response.name;
+    
+    dispatch(setImageName(foto,nome));
+  }
+
+  const responseGoogle = ({history},response) => {
+    history.push('/Conversor');
+    console.log(response);
+  }
+
+  const responseGoogleError = (response) => {
+    console.log(response);
+  }
+
+
+const Login = ({history}) => (
+
+    
     <div className="Login">
     
     <h1>Login com Facebook ou Google</h1>
         <br />
         <br />
 
+        
 
         <FacebookLogin
         appId="4102776476459877"
         fields="name,email,picture"
         callback={responseFacebook}
         textButton="LOGIN COM FACEBOOK"
+        
         />
         <br />
         <br />
@@ -48,4 +69,4 @@ export default function Login({history}) {
 
     </div>
   );
-}
+  export default connect(state => ({data: state.data}))(Login); 
