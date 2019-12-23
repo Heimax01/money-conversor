@@ -38,6 +38,11 @@ function  Login  ({history,dispatch})  {
       const responseGoogle = (response) => {
         history.push('/Conversor');
         console.log(response);
+
+        const foto = response.w3.Paa;
+        const nome = response.w3.ig;
+       
+        dispatch(setImageName(foto,nome));
       }
     
       const responseGoogleError = (response) => {
