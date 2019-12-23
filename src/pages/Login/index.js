@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 
 function  Login  ({history})  {
 
-    const setImageName = (foto,nome,response) => {
+    const setImageName = (foto,nome) => {
         return {
             type: 'SET_IMAGENAME',
             foto,
@@ -25,7 +25,7 @@ function  Login  ({history})  {
       }
     
     
-    const responseFacebook = ({dispatch,response}) => {
+    const responseFacebook = ({dispatch},response) => {
         history.push('/Conversor');
         console.log(response);
         const foto = response.data.picture.url;
