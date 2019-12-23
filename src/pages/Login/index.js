@@ -10,37 +10,40 @@ import { connect } from 'react-redux';
 
 
 
-const setImageName = (foto,nome,response) => {
-    return {
-        type: 'SET_IMAGENAME',
-        foto,
-        nome,
-    };
+
+
+
+function  Login  ({history})  {
+
+    const setImageName = (foto,nome,response) => {
+        return {
+            type: 'SET_IMAGENAME',
+            foto,
+            nome,
+        };
+        
+      }
     
-  }
-
-
-const responseFacebook = ({history,dispatch},response) => {
-    console.log(response);
-    const foto = response.data.picture.url;
-    const nome = response.name;
     
-    dispatch(setImageName(foto,nome));
-  }
-
-  const responseGoogle = ({history},response) => {
-    history.push('/Conversor');
-    console.log(response);
-  }
-
-  const responseGoogleError = (response) => {
-    console.log(response);
-  }
-
-
-const Login = ({history}) => (
-
+    const responseFacebook = ({dispatch,response}) => {
+        history.push('/Conversor');
+        console.log(response);
+        const foto = response.data.picture.url;
+        const nome = response.name;
+        
+        dispatch(setImageName(foto,nome));
+      }
     
+      const responseGoogle = ({history},response) => {
+        history.push('/Conversor');
+        console.log(response);
+      }
+    
+      const responseGoogleError = (response) => {
+        console.log(response);
+      }
+
+    return(
     <div className="Login">
     
     <h1>Login com Facebook ou Google</h1>
@@ -67,6 +70,6 @@ const Login = ({history}) => (
         onFailure={responseGoogleError}
         />
 
-    </div>
-  );
+    </div>);
+}
   export default connect(state => ({data: state.data}))(Login); 
