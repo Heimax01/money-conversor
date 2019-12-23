@@ -35,7 +35,7 @@ function  Login  ({history,dispatch})  {
          dispatch(setImageName(foto,nome));
       }
     
-      const responseGoogle = ({history},response) => {
+      const responseGoogle = (response) => {
         history.push('/Conversor');
         console.log(response);
       }
