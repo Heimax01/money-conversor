@@ -9,7 +9,6 @@ import Routes from './routes';
 import store from './store';
 
 import Perfil from './Perfil';
-import Login from './pages/Login';
 
 
 

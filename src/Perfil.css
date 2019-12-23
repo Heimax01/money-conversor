@@ -6,3 +6,6 @@
 .Perfil img {
     border-radius: 50%;
 }
+.Perfil a {
+    cursor: pointer;
+}
