@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import toaster from 'toasted-notes';
 import api from '../../services/api';
 
 
+import '../style.css';
 // import { Container } from './styles';
 
 export default function Converter({history}) {
@@ -27,7 +29,7 @@ export default function Converter({history}) {
     
 
       if(moedaB === "" || moedaA === ""){
-        alert('Escolha uma moeda')
+        toaster.notify('Escolha uma moeda')
       }else{
 
     let de_para = `${moedaA}_${moedaB}`;
@@ -42,7 +44,7 @@ export default function Converter({history}) {
       let cotacao = json[de_para];
       let moedaBValor = (parseFloat(moedaAValor) * cotacao).toFixed(2);
       if (moedaBValor === 'NaN') {
-        alert('Moeda inexistente')
+        toaster.notify('Moeda inexistente')
         setMoedaBValor("0");
       }else{
         setMoedaBValor(moedaBValor);

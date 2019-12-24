@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import toaster from 'toasted-notes';
 import api from '../../services/api';
 
+import '../style.css';
 // import { Container } from './styles';
 
 export default function AddCoin({history}) {
@@ -20,7 +22,7 @@ export default function AddCoin({history}) {
       console.log(response.data);
 
       if (( name.length === sizeInput) && (description !== "" )) {
-        alert('Moeda Cadastrada');
+        toaster.notify('Moeda Cadastrada');
       }
 
       
