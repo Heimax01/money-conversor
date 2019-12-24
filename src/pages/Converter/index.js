@@ -24,6 +24,12 @@ export default function Converter({history}) {
 
   const converter = () => {
 
+    
+
+      if(moedaB === "" || moedaA === ""){
+        alert('Escolha uma moeda')
+      }else{
+
     let de_para = `${moedaA}_${moedaB}`;
 
     let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=dc8365a2147573c09ad1`
@@ -44,7 +50,7 @@ export default function Converter({history}) {
     })
 
 
-    
+  }
 
   }
 
@@ -81,6 +87,7 @@ export default function Converter({history}) {
         {coins.map(coin => (
           <option key={coin._id} value={coin.name}>
             {coin.name} - {coin.description}
+            
           </option>
         ))}
       </select> 
