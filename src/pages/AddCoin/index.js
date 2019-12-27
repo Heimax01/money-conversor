@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import toaster from 'toasted-notes';
 import api from '../../services/api';
 
-import '../style.css';
+import '../Notification.css'
 // import { Container } from './styles';
 
 export default function AddCoin({history}) {

@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import toaster from 'toasted-notes';
 import api from '../../services/api';
+import '../Notification.css'
 
 
-import '../style.css';
+
+
 // import { Container } from './styles';
 
 export default function Converter({history}) {
-
+  
   useEffect(() => {
     async function loadCoins() {
       const response = await api.get('/listcoins');
@@ -24,12 +26,15 @@ export default function Converter({history}) {
   const [moedaBValor, setMoedaBValor] = useState(0);
  
 
+
+
   const converter = () => {
 
     
 
+
       if(moedaB === "" || moedaA === ""){
-        toaster.notify('Escolha uma moeda')
+        toaster.notify('Escolha uma moeda');
       }else{
 
     let de_para = `${moedaA}_${moedaB}`;
