@@ -1,18 +1,23 @@
 import React from 'react';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import './App.css';
+import '../../App.css';
 import './Perfil.css';
 // import { Container } from './styles';
 
 import { connect } from 'react-redux';
+import history from '../../history';
+  
 
+  
+ function Perfil  ()  {
   function dialog() {
-    NotificationManager.info(<a>logout</a>);
+    NotificationManager.info(<a onClick={nav}>logout</a>);
   }
 
- const Perfil = ({picture, name}) => {
+  function nav() {
+    history.push('/');
+  }
 
-    
 
   return (
     <div className="Perfil">
@@ -20,7 +25,7 @@ import { connect } from 'react-redux';
       <NotificationContainer/>     
 
      <a onClick={dialog}>
-      <img src={picture} alt={name} />
+      <img src='https://pleno.news/wp-content/uploads/2019/09/plenonews_69429078_424547198412357_2917137491588994799_n-1024x684.jpg' />
      
      </a>    
         

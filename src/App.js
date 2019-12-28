@@ -8,7 +8,7 @@ import Routes from './routes';
 
 import store from './store';
 
-import Perfil from './Perfil';
+import Perfil from './pages/Perfil/Perfil';
 
 
 
