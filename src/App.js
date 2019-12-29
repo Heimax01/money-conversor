@@ -8,7 +8,7 @@ import Routes from './routes';
 
 import store from './store';
 
-import Perfil from './pages/Perfil/Perfil';
+
 
 
 
@@ -22,7 +22,7 @@ function App() {
     <div className="container">
 
       <div className="content">
-        <Perfil />
+        
         <Routes />
       </div>
       

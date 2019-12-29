@@ -1,14 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import toaster from 'toasted-notes';
 import api from '../../services/api';
-import '../Notification.css'
+import '../Notification.css';
+
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import '../../App.css';
+import './Perfil.css';
 
 
+import { connect } from 'react-redux';
 
 
 // import { Container } from './styles';
 
-export default function Converter({history}) {
+function Converter({history, picture, name}) {
   
   useEffect(() => {
     async function loadCoins() {
@@ -60,6 +65,11 @@ export default function Converter({history}) {
   }
 
   }
+  function dialog() {
+    NotificationManager.info(<a onClick={navP}>logout</a>);
+  }
+
+  function navP() {history.push('/');}
 
   function nav() {
     history.push('/Coin');
@@ -71,9 +81,21 @@ export default function Converter({history}) {
 
 
 
-
   return (
-    <>
+    <div>
+    <div className="Perfil">
+
+      <NotificationContainer/>     
+
+     <a onClick={dialog}>
+      <img src='https://pleno.news/wp-content/uploads/2019/09/plenonews_69429078_424547198412357_2917137491588994799_n-1024x684.jpg' />
+     
+     </a>    
+        
+      
+    </div>
+    
+ 
     <form>
     <h1>Conversor de Moedas</h1>
       
@@ -116,6 +138,7 @@ export default function Converter({history}) {
     <button className="btn2" id="rel" onClick={nav2}>Relatório</button>
     </div>  
   
-      </>
+      </div>
   );
 }
+export default connect(state =>({picture: state.picture , name: state.name}))(Converter);
