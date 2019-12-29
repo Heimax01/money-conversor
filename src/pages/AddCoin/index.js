@@ -4,10 +4,16 @@ import api from '../../services/api';
 
 import '../Notification.css'
 // import { Container } from './styles';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import '../../App.css';
+import '../Converter/Perfil.css';
 
-export default function AddCoin({history}) {
+
+import { connect } from 'react-redux';
+
+function AddCoin({history, picture, name}) {
   
-    const [name, setName] = useState("");
+    const [nome, setNome] = useState("");
     const [description,setDescription] = useState("");
 
     const sizeInput = 3;
@@ -26,10 +32,15 @@ export default function AddCoin({history}) {
       }
 
       
-      setName("");
+      setNome("");
       setDescription("");
 
     }
+    function dialog() {
+      NotificationManager.info(<a onClick={navP}>logout</a>);
+    }
+  
+    function navP() {history.push('/');}
 
    function nav() {
       history.push('/Conversor');
@@ -39,12 +50,23 @@ export default function AddCoin({history}) {
   
   
     return (
-      <>
+      <div>
+      <div className="Perfil">
+
+        <NotificationContainer/>     
+
+        <a onClick={dialog}>
+        <img src={picture} alt={name}  />
+
+      </a>    
+        
+
+      </div>
     <h1>Cadastre uma Moeda</h1>
       <br/><br/>
       <form onSubmit={handleSubmit}>     
         <label>Sigla da moeda *</label>
-        <input type="text" maxLength={sizeInput} value={name} onChange={ (e) => setName(e.target.value)}/>
+        <input type="text" maxLength={sizeInput} value={nome} onChange={ (e) => setNome(e.target.value)}/>
         <label>Descrição *</label>
         <input type="text" value={description} onChange={ (e) => setDescription(e.target.value)}/>
         <br/><br/>
@@ -52,6 +74,7 @@ export default function AddCoin({history}) {
         <br/><br/><br/><br/><br/><br/>
         <button className="btn" onClick={nav}>Pagina principal</button>
       </form> 
-    </>
+    </div>
   );
 }
+export default connect(state =>({picture: state.picture , name: state.name}))(AddCoin);

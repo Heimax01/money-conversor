@@ -24,6 +24,10 @@ function Converter({history, picture, name}) {
     loadCoins();
   },[]);
 
+  
+  
+
+  
   const [coins, setCoins] = useState([]);
   const [moedaA, setMoedaA] = useState("");
   const [moedaB,setMoedaB] = useState("");
@@ -66,7 +70,9 @@ function Converter({history, picture, name}) {
 
   }
   function dialog() {
-    NotificationManager.info(<a onClick={navP}>logout</a>);
+    
+   NotificationManager.info(<a onClick={navP}>logout</a>);
+        
   }
 
   function navP() {history.push('/');}

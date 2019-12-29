@@ -26,23 +26,32 @@ function  Login  ({history,dispatch})  {
     
     
     const responseFacebook = (response) => {
-        console.log(response);
+        
+      
+      if(response.name){
         history.push('/Conversor');
+        const foto = response.picture.data.url;
+        const nome = response.name;
+        dispatch(setImageName(foto,nome));
+      }else{
+        history.push('/');
+      }
+      
         
-         const foto = response.picture.data.url;
-         const nome = response.name;
-        
-         dispatch(setImageName(foto,nome));
       }
     
       const responseGoogle = (response) => {
-        history.push('/Conversor');
-        console.log(response);
-
-        const foto = response.w3.Paa;
-        const nome = response.w3.ig;
-       
-        dispatch(setImageName(foto,nome));
+        
+        if(response.w3){
+          history.push('/Conversor');
+          const foto = response.w3.Paa;
+          const nome = response.w3.ig;
+          dispatch(setImageName(foto,nome));
+        }else{
+          history.push('/');
+        }
+        
+        
       }
     
       const responseGoogleError = (response) => {

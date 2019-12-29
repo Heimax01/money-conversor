@@ -2,8 +2,13 @@ import React, {useEffect, useState} from 'react';
 import api from '../../services/api';
 
 // import { Container } from './styles';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import '../../App.css';
+import '../Converter/Perfil.css';
 
-export default function Relatorio({history}) {
+import { connect } from 'react-redux';
+
+ function Relatorio({history,name, picture}) {
 
     useEffect(() => {
         async function loadCoins() {
@@ -16,13 +21,27 @@ export default function Relatorio({history}) {
     
       const [coins, setCoins] = useState([]);
 
+      function dialog() {
+        NotificationManager.info(<a onClick={navP}>logout</a>);
+      }
+    
+      function navP() {history.push('/');}
+
       function nav() {
           history.push('/Conversor');
       }
 
   return (
-    <>
-    
+    <div>
+      <div className="Perfil">
+
+        <NotificationContainer/>     
+
+        <a onClick={dialog}>
+        <img src={picture} alt={name}  />
+
+      </a> 
+      </div>
         {coins.map(coin => (
           <ul key={coin._id} value={coin.name}>
             {coin.name} - {coin.description}
@@ -30,6 +49,7 @@ export default function Relatorio({history}) {
         ))}
         <br/><br/>
         <button className="btn" onClick={nav}>Página principal</button>
-    </>
+    </div>
   );
 }
+export default connect(state =>({picture: state.picture , name: state.name}))(Relatorio);
