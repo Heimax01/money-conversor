@@ -88,7 +88,7 @@ function Converter({history, picture, name}) {
       <NotificationContainer/>     
 
      <a onClick={dialog}>
-      <img src='https://pleno.news/wp-content/uploads/2019/09/plenonews_69429078_424547198412357_2917137491588994799_n-1024x684.jpg' />
+      <img src={picture} alt={name}  />
      
      </a>    
         
