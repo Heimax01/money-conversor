@@ -1,26 +1,30 @@
-.Perfil{
-    
-    color: white;
-    margin-left: 360px;
+.Perfil {
+  height: -20px;
+  color: white;
+  margin-left: 360px;
 }
 .Perfil img {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  margin-right: 10px;
 }
 .Perfil a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @font-face {
-  font-family: 'Notification';
-  src: url('#{$react-notifications-font-base-path}/notification.eot?s3g3t9');
-  src: url('#{$react-notifications-font-base-path}/notification.eot?#iefixs3g3t9') format('embedded-opentype'),
-  url('#{$react-notifications-font-base-path}/notification.woff?s3g3t9') format('woff'),
-  url('#{$react-notifications-font-base-path}/notification.ttf?s3g3t9') format('truetype'),
-  url('#{$react-notifications-font-base-path}/notification.svg?s3g3t9#notification') format('svg');
+  font-family: "Notification";
+  src: url("#{$react-notifications-font-base-path}/notification.eot?s3g3t9");
+  src: url("#{$react-notifications-font-base-path}/notification.eot?#iefixs3g3t9")
+      format("embedded-opentype"),
+    url("#{$react-notifications-font-base-path}/notification.woff?s3g3t9")
+      format("woff"),
+    url("#{$react-notifications-font-base-path}/notification.ttf?s3g3t9")
+      format("truetype"),
+    url("#{$react-notifications-font-base-path}/notification.svg?s3g3t9#notification")
+      format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +37,7 @@
 
 .notification {
   color: white;
-  background-color:  #1d8808;
+  background-color: #1d8808;
   border-radius: 20%;
   width: 90px;
   border: 2px solid #1d8808;
@@ -45,6 +49,6 @@
   transform: translate3d(100%, 0, 0);
 }
 
-
-
-
+.form {
+  z-index: 999999;
+}
