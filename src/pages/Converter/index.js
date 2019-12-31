@@ -58,10 +58,12 @@ function Converter({ history, picture, name }) {
   function dialog() {
     if (click) {
       setClick(false);
-      NotificationManager.info(<a onClick={navP}>logout</a>);
+      const msg = <a onClick={navP}>logout</a>;
+      const gamb = null;
+      NotificationManager.warning(msg, gamb, 2000);
       setInterval(() => {
         setClick(true);
-      }, 6000);
+      }, 4000);
     }
   }
 
