@@ -24,6 +24,7 @@ function Converter({ history, picture, name }) {
     loadCoins();
   }, []);
 
+  const [click, setClick] = useState(true);
   const [coins, setCoins] = useState([]);
   const [moedaA, setMoedaA] = useState("");
   const [moedaB, setMoedaB] = useState("");
@@ -55,7 +56,13 @@ function Converter({ history, picture, name }) {
     }
   };
   function dialog() {
-    NotificationManager.info(<a onClick={navP}>logout</a>);
+    if (click) {
+      setClick(false);
+      NotificationManager.info(<a onClick={navP}>logout</a>);
+      setInterval(() => {
+        setClick(true);
+      }, 6000);
+    }
   }
 
   function navP() {
@@ -73,10 +80,10 @@ function Converter({ history, picture, name }) {
   return (
     <div className="main">
       <div className="Perfil">
+        <NotificationContainer className="logout" />
         <a onClick={dialog}>
           <img src={picture} alt={name} />
         </a>
-        <NotificationContainer className="logout" />
       </div>
 
       <form className="form">

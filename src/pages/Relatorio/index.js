@@ -19,10 +19,17 @@ import { connect } from 'react-redux';
         loadCoins();
       },[]);
     
+      const [click, setClick] = useState(true);
       const [coins, setCoins] = useState([]);
 
       function dialog() {
-        NotificationManager.info(<a onClick={navP}>logout</a>);
+        if (click) {
+          setClick(false);
+          NotificationManager.info(<a onClick={navP}>logout</a>);
+          setInterval(() => {
+            setClick(true);
+          }, 6000);
+        }
       }
     
       function navP() {history.push('/');}
